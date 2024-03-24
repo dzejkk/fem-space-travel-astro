@@ -1,22 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home Page">
-    <body>
-
-        00 Home
-        01 Destination
-        02 Crew
-        03 Technology
-      
+  <body class="home">
+    <div class="grid-container">
+      <div>
+      <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
         So, you want to travel to
-        Space
-        Let’s face it; if you want to go to space, you might as well genuinely go to 
-        outer space and not hover kind of on the edge of it. Well sit back, and relax 
-        because we’ll give you a truly out of this world experience! 
-      
-        Explore
-      
-      </body>
+        <span class="fs-900 text-white ff-serif">Space</span>
+      </h1>
+      <p>
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
+    </div>
+
+    <div>
+      <a
+        href="#"
+        class="large-button uppercase ff-serif fs-600 text-dark bg-white"
+        >Explore</a
+      >
+    </div>
+    </div>
+  </body>
 </Layout>
