@@ -327,10 +327,17 @@ select {
 /*header*/
 
 .logo {
-  margin: 1.5rem clamp(1.5rem,5vw,3.5rem);
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+  background-color: transparent;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .primary-navigation {
+  --gap: clamp(1.5rem, 5vw, 3.5rem);
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
@@ -373,12 +380,33 @@ select {
     border: 0;
     width: 1.5rem;
     aspect-ratio: 1;
+    cursor: pointer;
   }
 
   .mobile-nav-toggle[aria-expaned="true"] {
     background-image: url(/public/assets/shared/icon-close.svg);
   }
 }
+
+@media (min-width: 35em) and (max-width: 45em) {
+  .primary-navigation {
+    padding-inline: 3rem;
+  }
+
+  .primary-navigation a > span {
+    display: none;
+  }
+}
+
+@media (min-width: 45em) {
+  .primary-navigation {
+    margin-block: 2rem;
+  }
+}
+
+
+
+
 
 .primary-navigation a {
   text-decoration: none;
@@ -432,23 +460,23 @@ select {
 /* Page specific       */
 /* ------------------- */
 
-.home-image {
+.home{
   background-size: cover;
   background-position: bottom center;
 }
 
-.home-image {
+.home {
   background-image: url(/assets/home/background-home-mobile.jpg);
 }
 
 @media (min-width: 35rem) {
-  .home-image {
+  .home {
     background-image: url(/assets/home/background-home-tablet.jpg);
   }
 }
 
 @media (min-width: 45rem) {
-  .home-image {
+  .home {
     background-image: url(/assets/home/background-home-desktop.jpg);
   }
 }

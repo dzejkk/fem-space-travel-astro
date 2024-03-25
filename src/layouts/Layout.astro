@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import NavBar from "../components/NavBar.astro"
+import NavBar from "../components/NavBar.astro";
 
 interface Props {
   title?: string;
@@ -9,6 +9,7 @@ interface Props {
 
 const { title = "Default title", description = "Default Description" } =
   Astro.props as Props;
+
 ---
 
 <!doctype html>
@@ -29,7 +30,7 @@ const { title = "Default title", description = "Default Description" } =
     />
   </head>
   
-  <body>
+  <body class="home">
     <NavBar />
     <slot />
   </body>
