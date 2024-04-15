@@ -156,6 +156,7 @@ select {
   display: grid;
   place-items: center;
   padding-inline: 1rem;
+  height: 100dvh;
 }
 
 .grid-container * {
@@ -331,9 +332,11 @@ select {
 }
 
 .primary-header {
+  position: absolute;
   background-color: transparent;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .primary-navigation {
