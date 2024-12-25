@@ -546,7 +546,36 @@ select {
     max-width: 90%;
   }
   .destination-meta {
-    --gap: 6rem;
+    --gap: min(6vw, 6rem);
     justify-content: start;
   }
+}
+
+/*****************************************CREW*************************/
+
+.grid-container--crew {
+  --flow-space: 2rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.numbered-title {
+  grid-area: title;
+}
+
+.grid-container--crew > img {
+  grid-area: image;
+  max-width: 60%;
+}
+
+.grid-container--crew > .tab-list {
+  grid-area: tabs;
+}
+
+
+.grid-container--crew > .crew-info {
+  grid-area: content;
 }
