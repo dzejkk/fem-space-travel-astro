@@ -13,7 +13,7 @@
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
   --fs-600: 1rem;
-  --fs-500: 1.75rem;
+  --fs-500: 1rem;
   --fs-400: 0.9375rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
@@ -40,7 +40,7 @@
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
     --fs-600: 2rem;
-    --fs-500: 1.25rem;
+    --fs-500: 1.75rem;
     --fs-400: 1.125rem;
   }
 }
@@ -88,7 +88,7 @@ body {
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-dark));
   line-height: 1.5;
-  /*min-height: 100vh;*/
+  min-height: 100vh;
 
   display: grid;
   grid-template-rows: min-content 1fr;
@@ -145,6 +145,10 @@ select {
 
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small {
+  --flow-space: 0.5rem;
 }
 
 .container {
@@ -384,7 +388,7 @@ select {
 
 .underline-indicators > * {
   cursor: pointer;
-  padding: var(--underline-gap, 1rem) 0;
+  padding: var(--underline-gap, 0.5rem) 0;
   border: 0;
   border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
   background-color: transparent;
@@ -576,6 +580,10 @@ select {
   grid-area: content;
 }
 
+.crew-details h2 {
+  opacity: 0.5;
+}
+
 @media (min-width: 35em) {
   .numbered-title {
     justify-self: start;
@@ -640,6 +648,8 @@ select {
   }
 
   .grid-container--crew {
+    justify-content: center;
+    align-content: center;
     grid-template-areas:
       ". title title ."
       ". content image ."
