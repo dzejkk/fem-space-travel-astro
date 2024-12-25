@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Destination">
-  <div class="grid-container grid-container--destination flow ">
+  <div class="dummy-header"> <!--dummy header--></div>
+  <div class="grid-container grid-container--destination flow">
     <h1 class="numbered-title">
       <span aria-hidden="true">01</span> Pick your destination
     </h1>
@@ -49,13 +50,20 @@ import Layout from "../layouts/Layout.astro";
       <div class="destination-meta flex">
         <div>
           <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
-          <p class="fs-500 ff-serif uppercase">384,400 km</p>
+          <p class="ff-serif uppercase">384,400 km</p>
         </div>
         <div>
           <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
-          <p class="fs-500 ff-serif uppercase">3 days</p>
+          <p class="ff-serif uppercase">3 days</p>
         </div>
       </div>
     </article>
   </div>
 </Layout>
+
+<style>
+  .dummy-header {
+    height: 8rem;
+    /*outline: 3px solid green;*/
+  }
+</style>

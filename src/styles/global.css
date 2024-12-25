@@ -98,7 +98,7 @@ body {
 
 /* make images easier to work with */
 img,
-picutre {
+picture {
   max-width: 100%;
   display: block;
 }
@@ -457,7 +457,7 @@ select {
   height: 100dvh;
 }
 
-.grid-container * {
+.grid-container p:not([class]) {
   max-width: 50ch;
 }
 
@@ -496,6 +496,10 @@ select {
   margin-top: 2.5rem;
 }
 
+.destination-meta > p {
+  font-size: 1.75rem;
+}
+
 @media (min-width: 35rem) {
   .numbered-title {
     justify-self: start;
@@ -532,6 +536,7 @@ select {
 
   .grid-container--destination {
     justify-items: start;
+    align-items: start;
     grid-template-areas:
       ". title title ."
       ". image tabs ."
@@ -539,5 +544,9 @@ select {
   }
   .grid-container--destination > img {
     max-width: 90%;
+  }
+  .destination-meta {
+    --gap: 6rem;
+    justify-content: start;
   }
 }
