@@ -309,6 +309,18 @@ select {
   width: 100%;
 }
 
+@media (min-width: 45rem) {
+  .logo::before {
+    content: "";
+    display: block;
+    position: absolute; /* Use absolute positioning */
+    height: 1px;
+    width: 100%; /* Adjust the width as needed */
+    background: hsl(var(--clr-white) / 0.25);
+    transform: translateX(110px) translateY(45px);
+  }
+}
+
 .primary-navigation {
   --gap: clamp(1.5rem, 5vw, 3.5rem);
   --underline-gap: 2rem;
@@ -317,6 +329,7 @@ select {
   margin: 0;
   background: hsl(var(--clr-white) / 0.05);
   backdrop-filter: blur(2rem);
+  padding-inline: 1.5rem;
 }
 
 .mobile-nav-toggle {
@@ -524,6 +537,8 @@ select {
 
 .grid-container--destination {
   --flow-space: 2rem;
+  justify-content: center;
+  align-content: center;
   grid-template-areas:
     "title"
     "image"
@@ -558,7 +573,7 @@ select {
 /* crew layout */
 
 .grid-container--crew {
-  --flow-space: 2rem;
+  /*--flow-space: 2rem;*/
   grid-template-areas:
     "title"
     "image"
