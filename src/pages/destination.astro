@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import data from "../../data.json";
+
+const destinations = data.destinations;
 ---
 
 <Layout title="Destination">
@@ -7,32 +10,31 @@ import Layout from "../layouts/Layout.astro";
     <h1 class="numbered-title">
       <span aria-hidden="true">01</span> Pick your destination
     </h1>
-    <img src="/assets/destination/image-moon.png" alt="the moon" />
+    <img
+      src={`/assets/destination/image-${destinations[0].name.toLocaleLowerCase()}.png`}
+      alt="the moon"
+    />
     <div class="tab-list underline-indicators flex">
+      {
+        destinations.map((destination, index) => (
+          <button
+            data-index={index}
+            aria-selected={index === 0 ? "true" : "false"}
+            class="uppercase ff-sans-cond text-accent
+        letter-spacing-2"
+            onclick="updateDestination(this)"
+          >
+            {destination.name}
+          </button>
+        ))
+      }
+      <!-- 
       <button
         aria-selected="true"
         class="uppercase ff-sans-cond text-accent
           letter-spacing-2"
-        >Moon</button
-      >
-      <button
-        aria-selected="true"
-        class="uppercase ff-sans-cond text-accent
-          letter-spacing-2"
-        >Mars</button
-      >
-      <button
-        aria-selected="true"
-        class="uppercase ff-sans-cond text-accent
-          letter-spacing-2"
-        >Europa</button
-      >
-      <button
-        aria-selected="true"
-        class="uppercase ff-sans-cond text-accent
-          letter-spacing-2"
-        >Titan</button
-      >
+        >{destination.name}</button
+      >-->
     </div>
     <article class="destination-info">
       <h2 class="fs-800 uppercase ff-serif">Moon</h2>
