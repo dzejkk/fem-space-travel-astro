@@ -158,7 +158,6 @@ select {
 }
 
 .sr-only {
-  position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
@@ -646,6 +645,9 @@ select {
   .grid-container--destination {
     justify-items: start;
     align-content: center;
+    grid-template-columns: 0.5fr 400px 400px 0.5fr; /* ked som zadal px jednotky prestal resizing */
+    grid-template-rows: 300px 200px 300px 200px; /* ked som zadal px jednotky prestal resizing */
+
     grid-template-areas:
       ". title title ."
       ". image tabs ."
@@ -663,13 +665,18 @@ select {
   }
 
   .grid-container--crew {
-    justify-content: center;
-    align-content: center;
+    display: grid;
+    min-height: 900px;
+    grid-template-rows: 120px 3fr 1fr; /* ked som zadal px jednotky prestal resizing */
+    grid-template-columns: 0.5fr 400px 400px 0.5fr; /* ked som zadal px jednotky prestal resizing */
     grid-template-areas:
       ". title title ."
       ". content image ."
       ". tabs image .";
+    justify-content: center;
+    align-content: center;
   }
+
   .grid-container--crew > .dot-indicators {
     justify-self: start;
   }
