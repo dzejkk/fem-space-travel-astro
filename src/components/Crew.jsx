@@ -45,7 +45,7 @@ export default function Crew() {
                 <h2 className="fs-600 ff-serif uppercase">{currentCrew.role}</h2>
                 <p className="fs-700 uppercase ff-serif">{currentCrew.name}</p>
               </header>
-              <p className="bio">{currentCrew.bio}</p>
+              <p>{currentCrew.bio}</p>
             </article>
             <img src={currentCrew.images.png} alt={currentCrew.name} />
           </>
