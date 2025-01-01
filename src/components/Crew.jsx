@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
+import useCrewData from "../hooks/useCrewData";
 
 export default function Crew() {
-  const [crew, setCrew] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0); // Default to the first crew member
+  const {crew, error, loading, currentIndex, setCurrentIndex} = useCrewData();
+ 
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("../../data.json");
-        const data = await response.json(); // Await the JSON parsing
-        setCrew(data.crew);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
 
-  // Ensure `currentIndex` is valid
+  if(loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   const currentCrew = crew[currentIndex] || {};
+
 
   return (
     <>

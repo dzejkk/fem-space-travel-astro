@@ -4,6 +4,7 @@ const useCrewData = () => {
     const [crew, setCrew] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,7 +22,7 @@ const useCrewData = () => {
         fetchData();
     }, []);
 
-    return { crew, error, loading };    
+    return { crew, error, loading, currentIndex, setCurrentIndex };    
 }
 
 export default useCrewData;
