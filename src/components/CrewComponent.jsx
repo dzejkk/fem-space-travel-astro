@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useDataFetcher from "../hooks/useDataFetcher";
 
-export default function Crew() {
+export default function CrewComponent() {
   const { data, error, loading } = useDataFetcher();
   const crewData = data.crew;
 

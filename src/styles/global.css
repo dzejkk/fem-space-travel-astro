@@ -134,6 +134,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
@@ -438,6 +442,19 @@ select {
   background-color: hsl(var(--clr-white) / 1);
 }
 
+.round-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 1em;
+  background-color: hsl(var(--clr-white) / 0.25);
+}
+
 /* ------------------- */
 /* Page specific       */
 /* ------------------- */
@@ -654,9 +671,12 @@ select {
       ". image content .";
   }
 
-  .grid-container--destination > img,
-  .grid-container--crew > img {
+  .grid-container--destination > img {
     max-width: 90%;
+  }
+
+  .grid-container--crew > img {
+    max-width: 110%;
   }
 
   .destination-meta {

@@ -4,5 +4,15 @@ import TechnologyComponent from "../components/TechnologyComponent";
 ---
 
 <Layout title="destination">
-  <TechnologyComponent client:load />
+  <div class="technology-container technology">
+    <TechnologyComponent client:load />
+  </div>
 </Layout>
+
+<style>
+  .technology-container {
+    display: grid;
+    place-items: center;
+    height: 100dvh;
+  }
+</style>
