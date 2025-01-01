@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-const useCrewData = () => {
-    const [crew, setCrew] = useState([]);
+const useDataFetcher = () => {
+    const [data, setData] = useState({});
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState(0);
+  
 
     useEffect(() => {
         const fetchData = async () => {
@@ -12,7 +12,7 @@ const useCrewData = () => {
                 setLoading(true);
                 const response = await fetch('../../data.json');
                 const data = await response.json();
-                setCrew(data.crew);
+                setData(data);
             } catch (error) {
                 setError(error);
             } finally {
@@ -22,7 +22,7 @@ const useCrewData = () => {
         fetchData();
     }, []);
 
-    return { crew, error, loading, currentIndex, setCurrentIndex };    
+    return { data, error, loading,};    
 }
 
-export default useCrewData;
+export default useDataFetcher;

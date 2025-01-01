@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import useCrewData from "../hooks/useCrewData";
+import { useState } from "react";
+import useDataFetcher from "../hooks/useDataFetcher";
 
 export default function Crew() {
-  const {crew, error, loading, currentIndex, setCurrentIndex} = useCrewData();
- 
+  const { data, error, loading } = useDataFetcher();
+  const crewData = data.crew;
 
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  if(loading) {
+  if (loading) {
     return <div>Loading...</div>;
   }
 
@@ -14,8 +15,11 @@ export default function Crew() {
     return <div>Error: {error.message}</div>;
   }
 
-  const currentCrew = crew[currentIndex] || {};
+  if (!crewData) {
+    return <div>No crew data available</div>;
+  }
 
+  const currentCrew = crewData[currentIndex];
 
   return (
     <>
@@ -24,7 +28,7 @@ export default function Crew() {
           <span aria-hidden="true">02</span> Meet your crew
         </h1>
         <div className="dot-indicators flex">
-          {crew.map((person, index) => (
+          {crewData.map((person, index) => (
             <button
               key={person.name}
               aria-selected={index === currentIndex}
@@ -35,7 +39,7 @@ export default function Crew() {
             </button>
           ))}
         </div>
-        {crew.length > 0 && (
+        {crewData.length > 0 && (
           <>
             <article className="crew-details">
               <header className="flow flow--space-small">
@@ -50,4 +54,4 @@ export default function Crew() {
       </div>
     </>
   );
-}
+};
