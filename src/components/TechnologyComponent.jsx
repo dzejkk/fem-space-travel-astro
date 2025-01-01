@@ -47,7 +47,6 @@ export default function TechnologyComponent() {
           <>
             <article className="crew-details">
               <header className="flow flow--space-small">
-                <h2 className="fs-600 ff-serif uppercase">{currentTech.role}</h2>
                 <p className="fs-700 uppercase ff-serif">{currentTech.name}</p>
               </header>
               <p>{currentTech.description}</p>

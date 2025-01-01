@@ -21,7 +21,7 @@ export default function Destinations() {
   const current = destinations[currentIndex];
 
   return (
-    <div className="destination grid-container grid-container--destination flow">
+    <div className="grid-container grid-container--destination flow">
       <h1 className="numbered-title">
         <span aria-hidden="true">01</span> Pick your destination
       </h1>

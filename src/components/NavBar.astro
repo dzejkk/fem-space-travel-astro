@@ -38,25 +38,22 @@
             </li>
           </li>
         </li>
-
-        <script>
-          const nav = document.querySelector(".primary-navigation");
-          const navToggle = document.querySelector(".mobile-nav-toggle");
-
-          navToggle.addEventListener("click", () => {
-            const visiblity = nav.getAttribute("data-visible");
-            if (visiblity === "false") {
-              nav.setAttribute("data-visible", true);
-              navToggle.setAttribute("aria-expanded", true);
-            } else {
-              nav.setAttribute("data-visible", false);
-              navToggle.setAttribute("aria-expanded", false);
-            }
-
-            console.log(navToggle.getAttribute("aria-expanded"));
-          });
-        </script>
       </li>
     </ul>
   </nav>
 </header>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector(".primary-navigation");
+    const navToggle = document.querySelector(".mobile-nav-toggle");
+
+    navToggle.addEventListener("click", () => {
+      const visibility = nav.getAttribute("data-visible");
+      const isVisible = visibility === "true";
+
+      nav.setAttribute("data-visible", (!isVisible).toString());
+      navToggle.setAttribute("aria-expanded", (!isVisible).toString());
+    });
+  });
+</script>
