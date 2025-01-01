@@ -4,5 +4,15 @@ import Destinations from "../components/destinations";
 ---
 
 <Layout title="Destination">
-  <Destinations client:load />
+  <div class="destination-container destination">
+    <Destinations client:load />
+  </div>
 </Layout>
+
+<style>
+  .destination-container {
+    display: grid;
+    place-items: center;
+    height: 100dvh;
+  }
+</style>

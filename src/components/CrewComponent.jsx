@@ -35,7 +35,7 @@ export default function CrewComponent() {
               onClick={() => setCurrentIndex(index)}
               className="sr-only"
             >
-              {person.name}
+             
             </button>
           ))}
         </div>

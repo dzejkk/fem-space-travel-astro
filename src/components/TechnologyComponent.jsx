@@ -27,7 +27,7 @@ export default function TechnologyComponent() {
   return (
     <div>
       <>
-      <div className="grid-container grid-container--crew flow">
+      <div className="grid-container grid-container--technology flow">
         <h1 className="numbered-title">
           <span aria-hidden="true">03</span> Space Launch 101
         </h1>
