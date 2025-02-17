@@ -319,7 +319,7 @@ select {
     display: block;
     position: absolute; /* Use absolute positioning */
     height: 1px;
-    width: 100%; /* Adjust the width as needed */
+    width: 80%; /* Adjust the width as needed */
     background: hsl(var(--clr-white) / 0.25);
     transform: translateX(110px) translateY(45px);
   }
@@ -824,4 +824,24 @@ select {
   /* .grid-container--crew > img {
     align-self: end;
   }*/
+}
+
+@media (width < 445px) {
+  .grid-container {
+    grid-template-rows: 0;
+    margin-top: 2rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (width < 445px) {
+  .grid-container--destination {
+    margin-top: 8.5rem;
+  }
+}
+
+@media (width < 445px) {
+  .logo {
+    margin: 0.5rem;
+  }
 }

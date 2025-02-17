@@ -6,7 +6,10 @@ import Layout from "../layouts/Layout.astro";
   <div class="home flex-home">
     <div class="contianer-home-flex flow">
       <div class="flow">
-        <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
+        <h1
+          transition:animate="slide"
+          class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1"
+        >
           So, you want to travel to
           <span class="d-block fs-900 ff-serif text-white">Space</span>
         </h1>
@@ -43,6 +46,7 @@ import Layout from "../layouts/Layout.astro";
 
   @media (max-width: 55em) {
     .contianer-home-flex {
+      margin-top: 2rem;
       text-align: center;
       flex-direction: column;
       gap: 3rem;

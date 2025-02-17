@@ -42,8 +42,8 @@ const currentPath = Astro.url.pathname;
   </nav>
 </header>
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
+<script>
+  document.addEventListener("astro:page-load", () => {
     const nav = document.querySelector(".primary-navigation");
     const navToggle = document.querySelector(".mobile-nav-toggle");
 
